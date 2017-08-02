@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax</title>
+    <style>
+        .container {
+            height: 1200px;
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    
+        .iphone{
+            display: inline-block;
+            margin-top: 150px;
+            position: relative
+        }
+        .shape{
+            background-image: url(shape.jpg);
+            height: 128px;
+            width: 128px;
+            position: absolute;
+            top:75px;
+            right:161px ;
+            background-position: 0 0;
+            -webkit-mask-image: url(
+           apple-mask.png);
+            mask-image: url(
+           apple-mask.png);
+            
+            
+            
+            
+        }
+        
+    </style>
+</head>
+<body>
+  <section class="container">
+   <figure class="iphone">
+        <img src="iphone.jpg" alt="iphone" id="iphone">
+        <div class="shape"></div>
+    </figure>          
+  </section>
+  
+<script>
+    var $iphone= document.getElementById("iphone")
+    window.addEventListener('scroll',function(e){
+        console.log(window.scrollY);
+        $iphone.style.marginTop = window.scrollY + 'px'
+        
+    })
+    </script>
+</body>
+</html>
